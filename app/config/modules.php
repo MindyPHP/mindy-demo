@@ -12,6 +12,5 @@ return [
     'Redirect',
     'Sitemap',
     'Sites',
-    'Translate',
     'User',
 ];
