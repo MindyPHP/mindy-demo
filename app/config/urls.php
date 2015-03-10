@@ -11,5 +11,6 @@ return [
     '/mail' => new Patterns('Modules.Mail.urls', 'mail'),
     '' => new Patterns('Modules.Sitemap.urls', 'sitemap'),
     '/robots.txt' => new Patterns('Modules.Sites.urls', 'sites'),
-    '/' => new Patterns('Modules.Pages.urls', 'page'),
+    '/pages/' => new Patterns('Modules.Pages.urls', 'page'),
+    '/' => new Patterns('Modules.Demo.urls', 'demo'),
 ];

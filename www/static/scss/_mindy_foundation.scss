@@ -16,10 +16,10 @@ a {
     text-decoration: inherit;
     font-size: inherit;
   }
-  &.underline{
+  &.underline {
     border-bottom: 1px solid;
   }
-  .underline{
+  .underline {
     border-bottom: 1px solid;
   }
 }
@@ -31,10 +31,7 @@ body {
 input, textarea, button, select {
   outline: none !important;
 }
-.inline-block{
-  @include inline-block;
-}
 
-a, span, i{
-  @include transition($defaultTransition);
+.inline-block {
+  @include inline-block;
 }

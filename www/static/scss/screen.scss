@@ -2,23 +2,135 @@
 @import "settings";
 @import "foundation";
 @import "mindy";
+
 // Small fixes for foundation
 @import "mindy_foundation";
 
 @import "base/error";
-@import "base/pages";
 @import "base/menu";
-@import "base/sidebar";
 @import "base/mmodal";
-@import "base/fancybox";
 @import "base/flash";
 @import "base/breadcrumbs";
-@import "base/pager";
-@import "base/footer";
-@import "base/header";
 @import "base/mnotify";
 @import "base/mixins";
 
 @import "parts/sitemap";
 @import "parts/forms";
 @import "parts/mmodal";
+
+body {
+  @include antialias;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+@include sticky-footer($footer-height, "#wrapper", "#push", "#footer");
+
+#header {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 24px;
+  padding: 15px 0;
+
+  #logo {
+    font-size: 1.8rem;
+  }
+
+  .main-menu {
+    line-height: 40px;
+
+    li {
+      text-align: center;
+      font-size: 1.1rem;
+
+      a {
+        @include border-radius(5px);
+        padding: 0 6px;
+        color: #000;
+        display: block;
+        border: 2px solid transparent;
+
+        &:hover {
+          border-color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .main-menu.tabled {
+    display: table;
+
+    li {
+      display: table-cell;
+
+      a {
+        height: 100%;
+      }
+    }
+  }
+
+  .main-menu.justify {
+    list-style-type: none;
+    text-align: justify;
+
+    li {
+      display: inline-block;
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+
+#footer {
+  border-top: 1px solid #ccc;
+  padding-top: 24px;
+}
+
+.pager {
+  @include reset-list;
+  @include clearfix;
+
+  text-align: center;
+
+  li {
+    @include inline-block;
+    margin: 0 4px;
+
+    &.selected a {
+      @include border-radius(3px);
+      color: #fff;
+      background-color: $secondary-color;
+    }
+
+    span {
+      color: $concrete;
+    }
+
+    span, a {
+      padding: 2px 8px;
+      &:hover {
+        color: #fff;
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
+
+.demo-content {
+  p {
+    color: #353535;
+  }
+
+  ul {
+    margin-left: 18px;
+
+    li {
+      color: #353535;
+    }
+  }
+}

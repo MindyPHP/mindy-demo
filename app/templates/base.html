@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ru"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="ru"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9" lang="ru"> <![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ru"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="ru"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="ru"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="ru"> <!--<![endif]-->
 <head>
@@ -23,9 +26,9 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="/favicon72px.png">
-    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 163dpi)" href="/favicon57px.png" />
-    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 132dpi)" href="/favicon72px.png" />
-    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 326dpi)" href="/favicon114px.png" />
+    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 163dpi)" href="/favicon57px.png"/>
+    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 132dpi)" href="/favicon72px.png"/>
+    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 326dpi)" href="/favicon114px.png"/>
 </head>
 <body {% if request.path == '/' %} class="index"{% endif %}>
 <section id="wrapper">
@@ -33,16 +36,16 @@
         <section class="header-inner row">
             <section class="columns large-3">
                 <section class="logo">
-                    <a class="logo-link" href="/">
-                        <img src="/static/dist/images/main/logo.png" alt=""/>
-                    </a>
+                    <h1 id="logo">
+                        <a href="/">Mindy</a>
+                    </h1>
                 </section>
             </section>
             <section class="columns large-9">
                 <div class="menu-holder">
-                    <menu class="menu no-bullet main-menu justify">
-                        {{ get_menu('main-menu')|safe }}
-                    </menu>
+                    <ul class="menu no-bullet main-menu">
+                        <li><a href="{% url 'admin:index' %}">Панель администратора</a></li>
+                    </ul>
                 </div>
             </section>
         </section>
@@ -81,36 +84,14 @@
     <section id="footer-inner">
         <section class="row">
             <section class="column large-12">
-                <section class="footer-data">
-                    <section class="inline-block about">
-                        <section class="footer-multiline">
-                            {{ param('core.core.sitename') }}<br/>
-                            Все права защищены.
-                        </section>
-                    </section>
-
-                    <section class="inline-block address-info right">
-                            <section class="author">
-                                <section class="author-info">
-                                    Разработка сайта<br/>
-                                    <address>
-                                    <a class="transparent-link" href="http://studio107.ru" target="_blank">
-                                        Студия 107 &copy; {{ "now"|date("Y") }}
-                                    </a>
-                                    </address>
-                                </section>
-                                <section class="author-icon">
-                                    <i class="icon-107"></i>
-                                </section>
-                            </section>
-                    </section>
-                </section>
+                <p>Сайт разработан компанией <a href="http://studio107.ru" target="_blank">Студия 107</a>.</p>
+                <p>Все права защищены.</p>
             </section>
         </section>
     </section>
-    </section>
+</section>
 
-    {% block js %}{% endblock %}
+{% block js %}{% endblock %}
 
 </body>
 </html>
