@@ -13,4 +13,5 @@ return [
     'Sitemap',
     'Sites',
     'User',
+    'Demo'
 ];
